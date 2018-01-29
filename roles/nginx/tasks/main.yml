@@ -1,0 +1,6 @@
+# install nginx
+- apt:
+    name: "nginx"
+    install_recommends: yes
+
+- template: 

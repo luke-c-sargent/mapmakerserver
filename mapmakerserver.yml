@@ -1,0 +1,16 @@
+---
+  - hosts: mapmakerserver
+    gather_facts: False
+    pre_tasks:
+      - raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      - setup: # gather_facts
+
+    tasks:
+    - import_role:
+        name: nginx
+      tags:
+      - nginx
+    - import_role:
+        name: graphicsmagick
+      tags:
+      - graphicsmagick

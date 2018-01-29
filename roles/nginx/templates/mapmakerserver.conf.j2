@@ -1,0 +1,8 @@
+server {
+  listen {{ port }};
+
+  location / {
+    index index.htm;
+    root {{ host_directory }};
+  }
+}
